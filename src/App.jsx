@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./styles/invitation.css";
 
+// Introduction House Loader
+import { HouseIntroLoader } from "./components/HouseIntroLoader";
+
 // Sections
 import { HeroSection } from "./sections/HeroSection";
 import { ScriptureSection } from "./sections/ScriptureSection";
@@ -20,10 +23,16 @@ import { FloatingMusic } from "./components/FloatingMusic";
 import { ModalOriginalCard } from "./components/ModalOriginalCard";
 
 export default function App() {
+  const [showIntro, setShowIntro] = useState(true);
   const [isCardModalOpen, setIsCardModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] text-[#2B2523] selection:bg-[#8B263E] selection:text-[#FFFDF8]">
+      {/* 0. Opening Animated House Loading & Unveiling Experience */}
+      {showIntro && (
+        <HouseIntroLoader onComplete={() => setShowIntro(false)} />
+      )}
+
       {/* Main Single-Page Invitation Stream */}
       <main>
         {/* 1. Opening / Welcome Hero Experience */}
