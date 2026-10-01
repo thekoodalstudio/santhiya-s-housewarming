@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+import "./styles/invitation.css";
+
+// Sections
+import { HeroSection } from "./sections/HeroSection";
+import { ScriptureSection } from "./sections/ScriptureSection";
+import { HouseVisualSection } from "./sections/HouseVisualSection";
+import { InvitationMessageSection } from "./sections/InvitationMessageSection";
+import { DateTimeSection } from "./sections/DateTimeSection";
+import { CountdownSection } from "./sections/CountdownSection";
+import { FamilyPhotoSection } from "./sections/FamilyPhotoSection";
+import { HostsSection } from "./sections/HostsSection";
+import { VenueSection } from "./sections/VenueSection";
+import { RsvpSection } from "./sections/RsvpSection";
+import { ShareSection } from "./sections/ShareSection";
+import { FooterSection } from "./sections/FooterSection";
+
+// Floating / Modal components
+import { FloatingMusic } from "./components/FloatingMusic";
+import { ModalOriginalCard } from "./components/ModalOriginalCard";
+
+export default function App() {
+  const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-[#FAF6F0] text-[#2B2523] selection:bg-[#8B263E] selection:text-[#FFFDF8]">
+      {/* Main Single-Page Invitation Stream */}
+      <main>
+        {/* 1. Opening / Welcome Hero Experience */}
+        <HeroSection onOpenOriginalCard={() => setIsCardModalOpen(true)} />
+
+        {/* 2. Holy Scripture (Psalm 122:7) */}
+        <ScriptureSection />
+
+        {/* 3. House / Blessed New Home */}
+        <HouseVisualSection />
+
+        {/* 4. Dedication & Warm Invitation Message */}
+        <InvitationMessageSection />
+
+        {/* 5. Date & Time with Calendar Actions */}
+        <DateTimeSection />
+
+        {/* 6. Live Event Countdown */}
+        <CountdownSection />
+
+        {/* 7. Family Portrait Section */}
+        <FamilyPhotoSection />
+
+        {/* 8. Hosts / அன்புடன் அழைப்பவர்கள் */}
+        <HostsSection />
+
+        {/* 9. Venue & Google Maps Navigation */}
+        <VenueSection />
+
+        {/* 10. Interactive RSVP via WhatsApp */}
+        <RsvpSection />
+
+        {/* 11. WhatsApp & Social Sharing */}
+        <ShareSection />
+
+        {/* 12. Closing Christian Blessing & Minimal Studio Attribution */}
+        <FooterSection onOpenOriginalCard={() => setIsCardModalOpen(true)} />
+      </main>
+
+      {/* Floating Background Hymn Player */}
+      <FloatingMusic />
+
+      {/* Original Printed Card Lightbox Modal */}
+      <ModalOriginalCard
+        isOpen={isCardModalOpen}
+        onClose={() => setIsCardModalOpen(false)}
+      />
+    </div>
+  );
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#6D1A2C" />
+  <!-- House outline -->
+  <path d="M32 10L14 26V52H50V26L32 10Z" stroke="#D4AF37" stroke-width="2.5" fill="#4A0E1C" />
+  <!-- Cross in house -->
+  <path d="M32 20V42M24 28H40" stroke="#F5D77F" stroke-width="3" stroke-linecap="round" />
+  <!-- Little heart -->
+  <path d="M32 44C32 44 28 41 28 38C28 36.5 29.5 35.5 31 36.5L32 37.5L33 36.5C34.5 35.5 36 36.5 36 38C36 41 32 44 32 44Z" fill="#D4AF37" />
+</svg>
