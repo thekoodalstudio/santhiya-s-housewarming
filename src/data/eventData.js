@@ -87,9 +87,9 @@ export const eventData = {
 
   // RSVP Configuration
   rsvp: {
-    // Easily configurable WhatsApp number for the family (with international country code without '+' or special chars)
-    // Business owner can replace this number anytime:
-    whatsappNumber: "919876543210", // REPLACE_WITH_NUMBER
+    // WhatsApp number for RSVP (+91 96062 19216)
+    whatsappNumber: "919606219216",
+    displayNumber: "+91 96062 19216",
     defaultContactName: "Family Host",
     options: [
       {
@@ -124,7 +124,9 @@ export const eventData = {
   // Assets
   images: {
     house: "/assets/house.jpg",
-    familyPortrait: "/assets/family_portrait.jpg",
+    familyPortrait: "/assets/welcoming_family_portrait.jpg",
+    welcomingPortrait: "/assets/welcoming_family_portrait.jpg",
+    realHouseExterior: "/assets/real_house_exterior.jpg",
     fullPoster: "/assets/invitation_full.jpg",
   },
 

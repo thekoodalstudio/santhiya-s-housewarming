@@ -159,3 +159,33 @@ Vergin Santhiya House Warming/
 4. Framework Preset: **Vite**.
 5. Root Directory: `./`.
 6. Click **Deploy**. Vercel will run `npm run build` and publish the site instantly.
+
+---
+
+## 6. Welcoming Portrait & RSVP Contact Update (03 October 2026)
+
+### A. Asset Integration (`Welcoming Family Portrait at Their New Home.png`)
+- **Source Image**: `assets_source/Welcoming Family Portrait at Their New Home.png` (Dimensions: 1347x1167, high-resolution family photo with welcoming outstretched hands in front of the newly constructed modern home).
+- **Optimized Assets**:
+  - `public/assets/welcoming_family_portrait.jpg`: 520 KB high-fidelity JPG.
+  - `public/assets/real_house_exterior.jpg`: 148 KB exterior crop of the modern facade.
+
+### B. Loading Page Unveiling Experience (`HouseIntroLoader.jsx`)
+- Framed the welcoming family portrait within a majestic **Royal Arch Frame** (`intro-portrait-frame`) with an antique gold filigree gradient border (`#F9E8B2` to `#D4AF37` to `#8B651B`).
+- Crowning golden Christian cross badge (`intro-arch-crown`) positioned atop the arch with a soft glowing halo.
+- Soft floating micro-animation (`introPortraitFloat`) and subtle light sweep across the portrait (`intro-portrait-shimmer`).
+- Lower ribbon badge: `எங்கள் இல்லத்திற்கு அன்புடன் வரவேற்கிறோம்` (Welcome to our New Home).
+- Centered Tamil and English titles, Psalm 122:7 scripture, smooth progress bar with live percentage counter, and responsive "Open Invitation • அழைப்பிதழைத் திறக்கவும் ✨" button.
+
+### C. Invite Card Showcase (`FamilyPhotoSection.jsx` & `eventData.js`)
+- Configured `eventData.images.familyPortrait` to `/assets/welcoming_family_portrait.jpg`.
+- Styled inside the gold-bordered `family-frame` with responsive fluid sizing ensuring all family members and the house facade are displayed without clipping.
+
+### D. RSVP Mobile Number & WhatsApp Contact
+- Configured WhatsApp RSVP number in `src/data/eventData.js`:
+  - `whatsappNumber: "919606219216"`
+  - `displayNumber: "+91 96062 19216"`
+- Updated `src/sections/RsvpSection.jsx` to render:
+  - `RSVP WhatsApp & Call: +91 96062 19216`
+  - Direct WhatsApp links for all 3 RSVP buttons (`Yes, I'll be there`, `With Family`, `Unable to Attend`) and direct click-to-chat phone link.
+

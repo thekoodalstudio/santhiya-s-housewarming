@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/invitation.css";
 
 // Introduction House Loader
@@ -23,8 +23,23 @@ import { FloatingMusic } from "./components/FloatingMusic";
 import { ModalOriginalCard } from "./components/ModalOriginalCard";
 
 export default function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window !== "undefined") {
+      return !new URLSearchParams(window.location.search).has("skipIntro");
+    }
+    return true;
+  });
   const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (!showIntro && typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      setTimeout(() => {
+        const elem = document.getElementById(id);
+        if (elem) elem.scrollIntoView({ behavior: "smooth" });
+      }, 200);
+    }
+  }, [showIntro]);
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] text-[#2B2523] selection:bg-[#8B263E] selection:text-[#FFFDF8]">

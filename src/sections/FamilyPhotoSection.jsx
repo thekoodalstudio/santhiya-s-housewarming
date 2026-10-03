@@ -5,7 +5,7 @@ import { Heart } from "lucide-react";
 
 export function FamilyPhotoSection() {
   return (
-    <section className="family-section">
+    <section id="family-section" className="family-section">
       <div className="section-label">
         <Heart className="w-3.5 h-3.5 fill-[#8B263E]" />
         <span>Family In Faith & Grace • எங்கள் குடும்பம்</span>

@@ -94,11 +94,21 @@ export function RsvpSection() {
           </div>
         )}
 
-        <div className="mt-6 pt-4 border-t border-[rgba(212,175,55,0.2)] text-[11px] text-[#8B263E] font-serif">
-          Configured RSVP WhatsApp: +{eventData.rsvp.whatsappNumber}
-          <div className="text-[10px] text-stone-500 mt-0.5">
-            (Phone number can be changed in <code>src/data/eventData.js</code>)
+        <div className="mt-6 pt-4 border-t border-[rgba(212,175,55,0.25)] flex flex-col items-center justify-center gap-1.5 text-xs text-[#6D1A2C] font-serif">
+          <div className="flex items-center gap-2 font-semibold">
+            <span className="text-[#8B263E]">RSVP WhatsApp & Call:</span>
+            <a
+              href={`https://api.whatsapp.com/send?phone=${eventData.rsvp.whatsappNumber}&text=${encodeURIComponent("Hello! Regarding the Housewarming Ceremony on 19 October 2026...")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#9A7228] hover:text-[#4A0E1C] underline font-bold tracking-wider"
+            >
+              {eventData.rsvp.displayNumber}
+            </a>
           </div>
+          <span className="text-[11px] text-[#7A6B65] font-tamil">
+            தங்கள் வருகையை வாட்ஸ்அப் அல்லது அழைப்பு மூலம் தெரிவிக்கலாம்
+          </span>
         </div>
       </div>
     </section>
